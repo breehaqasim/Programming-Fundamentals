@@ -1,0 +1,16 @@
+[a,b,c] = [int(x) for x in input().strip().split()]
+def seniority(a,b,c):
+    #c=Aalia , b=Ali, a=Aala
+    if c>b>a:
+        print("Oldest to youngest: Aalia Ali Aala")
+    elif c>a>b:
+        print("Oldest to youngest: Aalia Aala Ali")
+    elif b>a>c:
+        print("Oldest to youngest: Ali Aala Aalia")
+    elif b>c>a:
+        print("Oldest to youngest: Ali Aalia Aala")
+    elif a>b>c:
+        print("Oldest to youngest: Aala Ali Aalia")
+    else:
+        print("Oldest to youngest: Aala Aalia Ali")
+seniority(a,b,c)
