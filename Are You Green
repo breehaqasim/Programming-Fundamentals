@@ -1,0 +1,14 @@
+distance= float(input())
+amount= float(input())
+cost= float(input())
+target= float(input())
+def are_you_green(distance, amount, cost, target):
+    fuel_consumed = amount/cost
+    fuel_economy = 100*fuel_consumed/distance
+    if fuel_economy<target:
+        print("Your vehicle exceeded the target by", round((target-fuel_economy),2), "L/100 km." )
+    elif fuel_economy>target:
+        print("Your vehicle missed the target by", round((fuel_economy-target),2), "L/100 km.")
+    else:
+        print("Your vehicle just met the target.")
+are_you_green(distance, amount, cost, target)
