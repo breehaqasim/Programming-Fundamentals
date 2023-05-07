@@ -1,0 +1,21 @@
+secret_number = int(input())
+def guessing_game(secret_number, num_tries):
+    guesses = int(input())
+    if guesses != secret_number and num_tries == 5:
+        print("Attempt number",num_tries)
+        print("Sorry, you lose! Too many wrong guesses.") 
+        return 
+    elif guesses == secret_number and num_tries <= 5:
+        print("Attempt number",num_tries)
+        print("Congratulations, you won! You guessed the secret number",secret_number,"in",num_tries,"guesses.") 
+        return
+    elif secret_number > guesses and 0 < num_tries and num_tries < 5:
+            print("Attempt number",num_tries)
+            print("Try again! Your guess is too low.") 
+            guessing_game(secret_number, num_tries + 1)
+            return
+    elif secret_number < guesses and 0 < num_tries and num_tries < 5:
+            print("Attempt number",num_tries)
+            print("Try again! Your guess is too high.")
+            guessing_game(secret_number, num_tries + 1) 
+            return
