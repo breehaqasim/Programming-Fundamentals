@@ -1,0 +1,9 @@
+a = int(input())
+b = int(input())
+def modulus(a, b):
+    if b>a:
+        return a
+    elif b==a:
+        return 0
+    else:
+        return modulus(a - b, b)
