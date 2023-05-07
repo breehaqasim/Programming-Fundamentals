@@ -1,0 +1,11 @@
+#Center Justify Function
+[s,n] = input().strip().split()
+n = int(n)
+def center_justify(s,n):
+    spacesleft = n - len(s)
+    #equal character spaces on both sides of the word
+    centerspace = int(spacesleft/2)
+    print((" " * centerspace)+ s + (" " * centerspace)+ ".")
+center_justify(s, n)
+
+
