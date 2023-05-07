@@ -1,0 +1,9 @@
+a = int(input())
+b = int(input())
+def gcd(a, b):
+    if a == 0 or b == 0:
+        return a + b
+    elif a > b:
+        return b//a + gcd(b, a%b)
+    elif b > a:
+        return a//b + gcd(a, b%a)
