@@ -1,0 +1,23 @@
+#A guessing game between two players requires Player 1 to guess a secret number set by Player 2. If the guess is too low or too high, Player 2 tells Player 1 as such and she can guess again. If Player 1 guesses the secret number in 5 tries, she wins.
+#We are going to program the computer to be Player 2 and the user will be Player 1.
+#Write an iterative function called guessing_game that takes parameters secret_number and num_tries representing the secret number and the number of Player 1's tries so far. The function should input Player 1's guess, display the corresponding messages, and 
+iterate if Player 1 needs to guess again and there are more tries left.
+
+secret_number = int(input())
+def guessing_game(secret_number, num_tries):
+    while num_tries<6:
+      guesses = int(input())
+      print("Attempt number",num_tries)
+      if guesses==secret_number:
+        print("Congratulations, you won! You guessed the secret number",secret_number,"in",num_tries,"guesses.")
+        break
+      else:
+        if num_tries>=5:
+           print("Sorry, you lose! Too many wrong guesses.")
+        elif guesses>secret_number:
+           print("Try again! Your guess is too high.")
+        elif guesses<secret_number:
+           print("Try again! Your guess is too low.")
+      num_tries+=1
+      
+guessing_game(secret_number,1)
