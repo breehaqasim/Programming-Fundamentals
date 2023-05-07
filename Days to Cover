@@ -1,0 +1,8 @@
+area = int(input())
+
+from math import ceil
+def days_to_cover(area):
+    if area == 1 or area == 0:
+        return 0
+    else:
+        return 1 + days_to_cover(ceil(area/2))
