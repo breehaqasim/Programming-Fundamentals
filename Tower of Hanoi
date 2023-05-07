@@ -1,0 +1,29 @@
+def count_hanoi_moves(n):
+    if n == 0 or n == 1:
+        return 1
+    elif n > 1 :
+        return (2**(n -1) + count_hanoi_moves(n-1))
+    
+    
+    
+def hanoi_moves(n, src, dst):
+    if n == 1:
+        print("Move disk from peg",src,"to peg",dst)
+    else:
+        pillar3 = 3 - (src + dst)
+        hanoi_moves(n-1, src, pillar3)
+        #hanoi_moves(n-1, src, dst)
+        hanoi_moves(1, src, dst)
+        hanoi_moves(n-1, pillar3, dst)
+        
+            
+
+select = int(input())
+if select == 1:
+    n = int(input())
+    print(count_hanoi_moves(n))
+elif select == 2:
+    n = int(input())
+    src = int(input())
+    dst = int(input())
+    hanoi_moves(n, src, dst)
