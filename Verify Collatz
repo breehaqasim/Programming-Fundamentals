@@ -1,0 +1,9 @@
+n = int(input())
+def verify_collatz(n):
+    print(n)
+    if n==1:
+        return n
+    elif n%2==0:
+        return verify_collatz(n//2)
+    elif n%2!=0:
+        return verify_collatz((n*3)+1)
