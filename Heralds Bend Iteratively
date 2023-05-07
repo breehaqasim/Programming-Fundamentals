@@ -1,0 +1,18 @@
+#Write a function named bend, which accepts one argument size of type int, that prints a square outline of the specified size, with a diagonal line running from the top-left to the bottom-right corner.
+
+def bend(Size):
+  char= "* "
+  if size==2:
+    print(char*size)
+    print(char*Size)
+  else:
+    counter=1
+    print(char * (size-1) + "*")
+    for i in range(1,size-1):
+      print("*" + " " * (counter) + "*" + " " * ((size*2)-4-counter) + "*" )
+      counter+=2
+    print(char * (size-1) + "*")
+   
+size=int(input())
+bend(size)
+    
